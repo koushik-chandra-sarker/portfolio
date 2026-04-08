@@ -1,0 +1,15 @@
+/* App-level global styles */
+.app {
+  min-height: 100vh;
+}
+
+/* Smooth section transitions */
+main > section {
+  position: relative;
+}
+
+main > section:nth-child(even) {
+  background: var(--bg-secondary);
+}
+
+/* Global skill-tag import (used across Experience, Projects) */
