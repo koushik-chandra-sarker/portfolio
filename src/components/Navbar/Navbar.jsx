@@ -68,7 +68,7 @@ export default function Navbar({ theme, toggleTheme }) {
       <div className="navbar__container container">
         <a className="nav-logo" href="#home" onClick={() => handleNavClick('home')}>
           <span className="nav-logo__bracket">&lt;</span>
-          <span className="nav-logo__name">KCS</span>
+          <span className="nav-logo__name">TheKoushik</span>
           <span className="nav-logo__bracket"> /&gt;</span>
         </a>
 

@@ -4,7 +4,8 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SectionHeader from '../shared/SectionHeader';
 import { summary, stats } from '../../data/portfolio';
-import profileImg from '../../assets/profile.png';
+import profileImgDark from '../../assets/profile.png';
+import profileImgLight from '../../assets/profile-light.png';
 import './About.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -42,6 +43,21 @@ function AnimatedCounter({ value, suffix = '' }) {
 
 export default function About() {
   const aboutRef = useRef(null);
+  const [theme, setTheme] = useState(() =>
+    document.documentElement.getAttribute('data-theme') || 'dark'
+  );
+
+  const profileImg = theme === 'light' ? profileImgLight : profileImgDark;
+
+  // Listen for theme changes
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      setTheme(current);
+    });
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    return () => observer.disconnect();
+  }, []);
 
   useGSAP(() => {
     gsap.from('.about__image-wrapper', {

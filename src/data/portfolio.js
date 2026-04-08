@@ -1,3 +1,5 @@
+import resumeFile from '../assets/resume/Resume - Koushik Chandra Sarker d.pdf';
+
 export const personalInfo = {
   name: "Koushik Chandra Sarker",
   title: "Full-Stack Software Engineer",
@@ -14,7 +16,7 @@ export const personalInfo = {
   location: "Dhaka, Bangladesh",
   github: "https://github.com/koushik-chandra-sarker",
   linkedin: "https://linkedin.com/in/koushik-chandra-sarker/",
-  resumeFile: "/Koushik_Chandra_Sarker_Resume.pdf",
+  resumeFile: resumeFile,
 };
 
 export const summary = [

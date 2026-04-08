@@ -4,7 +4,8 @@ import gsap from 'gsap';
 import { FiGithub, FiLinkedin, FiMail, FiPhone, FiDownload, FiChevronDown } from 'react-icons/fi';
 import ParticleBackground from '../shared/ParticleBackground';
 import { personalInfo } from '../../data/portfolio';
-import profileImg from '../../assets/profile.png';
+import profileImgDark from '../../assets/profile.png';
+import profileImgLight from '../../assets/profile-light.png';
 import './Hero.css';
 
 export default function Hero() {
@@ -12,6 +13,21 @@ export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
+  const [theme, setTheme] = useState(() =>
+    document.documentElement.getAttribute('data-theme') || 'dark'
+  );
+
+  const profileImg = theme === 'light' ? profileImgLight : profileImgDark;
+
+  // Listen for theme changes
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      setTheme(current);
+    });
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    return () => observer.disconnect();
+  }, []);
 
   // Typewriter effect
   useEffect(() => {
