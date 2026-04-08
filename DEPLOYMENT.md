@@ -12,7 +12,7 @@ The following steps have already been configured in the repository:
     ```
 
 2.  **Configured `package.json`**:
-    - Added `"homepage": "https://koushik-chandra-sarker.github.io/personal-portfolio-static/"`
+    - Added `"homepage": "https://koushik-chandra-sarker.github.io/portfolio/"`
     - Added scripts:
       ```json
       "predeploy": "npm run build",
@@ -22,7 +22,7 @@ The following steps have already been configured in the repository:
 3.  **Configured `vite.config.js`**:
     - Set the `base` path to match the repository name:
       ```javascript
-      base: '/personal-portfolio-static/'
+      base: '/portfolio/'
       ```
 
 ## 🛠️ How to Deploy Updates
@@ -41,7 +41,7 @@ npm run deploy
 
 After the first deployment, ensure your repository is configured correctly:
 
-1.  Open your repo on GitHub: [personal-portfolio-static](https://github.com/koushik-chandra-sarker/personal-portfolio-static)
+1.  Open your repo on GitHub: [portfolio](https://github.com/koushik-chandra-sarker/portfolio)
 2.  Go to **Settings** > **Pages**.
 3.  Under **Build and deployment** > **Branch**:
     - Select `gh-pages`.
@@ -51,7 +51,7 @@ After the first deployment, ensure your repository is configured correctly:
 ## 🌐 Live URL
 
 Your portfolio is available at:
-**[https://koushik-chandra-sarker.github.io/personal-portfolio-static/](https://koushik-chandra-sarker.github.io/personal-portfolio-static/)**
+**[https://koushik-chandra-sarker.github.io/portfolio/](https://koushik-chandra-sarker.github.io/portfolio/)**
 
 ## 💡 Troubleshooting
 
